@@ -1,0 +1,27 @@
+// Program 4: Copy one string into another
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Function to copy the string
+string copy(string a)
+{
+    return a;
+}
+
+int main()
+{
+    string a, b;
+
+    // Input the original string
+    cout << "Enter a string: ";
+    getline(cin, a);
+
+    // Copy the string
+    b = copy(a);
+
+    // Display the copied string
+    cout << "Copied string: " << b;
+
+    return 0;
+}
