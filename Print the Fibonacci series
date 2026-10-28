@@ -1,0 +1,39 @@
+// Program 2: Print the Fibonacci series
+#include <iostream>
+using namespace std;
+
+// Function to print Fibonacci series
+void fib(int n)
+{
+    int a = 0, b = 1, c, i;
+
+    for (i = 1; i <= n; i++)
+    {
+        cout << a << " ";
+
+        // Calculate the next term
+        c = a + b;
+        a = b;
+        b = c;
+    }
+}
+
+int main()
+{
+    int n;
+
+    // Input number of terms
+    cout << "Enter number of terms: ";
+    cin >> n;
+
+    if (n < 1 || n > 45)
+    {
+        cout << "Enter terms between 1 and 45.";
+        return 0;
+    }
+
+    // Display the series
+    fib(n);
+
+    return 0;
+}
