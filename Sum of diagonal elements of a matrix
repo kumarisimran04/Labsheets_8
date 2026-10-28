@@ -1,0 +1,45 @@
+// Program 8: Find the sum of main diagonal elements
+#include <iostream>
+using namespace std;
+
+const int MAX = 10;
+
+// Function to calculate diagonal sum
+int sum(int a[][MAX], int n)
+{
+    int i, s = 0;
+
+    for (i = 0; i < n; i++)
+    {
+        // Add main diagonal elements
+        s = s + a[i][i];
+    }
+
+    return s;
+}
+
+int main()
+{
+    int a[MAX][MAX], n, i, j;
+
+    // Input matrix size
+    cout << "Enter square matrix size: ";
+    cin >> n;
+
+    if (n < 1 || n > MAX)
+    {
+        cout << "Invalid matrix size.";
+        return 0;
+    }
+
+    // Input matrix elements
+    cout << "Enter matrix elements:\n";
+    for (i = 0; i < n; i++)
+        for (j = 0; j < n; j++)
+            cin >> a[i][j];
+
+    // Display diagonal sum
+    cout << "Sum of diagonal elements: " << sum(a, n);
+
+    return 0;
+}
