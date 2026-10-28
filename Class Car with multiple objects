@@ -1,0 +1,58 @@
+// Program 11: Create multiple objects of Car class
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Car
+{
+public:
+    string brand;
+    float price;
+
+    // Function to input car details
+    void input()
+    {
+        cout << "Enter car brand: ";
+        getline(cin >> ws, brand);
+
+        cout << "Enter car price: ";
+        cin >> price;
+    }
+
+    // Function to display car details
+    void display()
+    {
+        cout << "Brand: " << brand << endl;
+        cout << "Price: " << price << endl;
+    }
+};
+
+int main()
+{
+    // Create three Car objects
+    Car c1, c2, c3;
+
+    // Input details of first car
+    cout << "Enter first car details:\n";
+    c1.input();
+
+    // Input details of second car
+    cout << "\nEnter second car details:\n";
+    c2.input();
+
+    // Input details of third car
+    cout << "\nEnter third car details:\n";
+    c3.input();
+
+    // Display all car details
+    cout << "\nFirst Car:\n";
+    c1.display();
+
+    cout << "\nSecond Car:\n";
+    c2.display();
+
+    cout << "\nThird Car:\n";
+    c3.display();
+
+    return 0;
+}
