@@ -1,0 +1,81 @@
+// Program 15: Demonstrate abstraction using Shape
+#include <iostream>
+using namespace std;
+
+// Abstract base class
+class Shape
+{
+public:
+    // Pure virtual function
+    virtual double area() = 0;
+};
+
+// Derived class Circle
+class Circle : public Shape
+{
+private:
+    double r;
+
+public:
+    // Constructor to initialize radius
+    Circle(double a)
+    {
+        r = a;
+    }
+
+    // Calculate area of circle
+    double area()
+    {
+        return 3.14 * r * r;
+    }
+};
+
+// Derived class Rectangle
+class Rectangle : public Shape
+{
+private:
+    double l, w;
+
+public:
+    // Constructor to initialize dimensions
+    Rectangle(double a, double b)
+    {
+        l = a;
+        w = b;
+    }
+
+    // Calculate area of rectangle
+    double area()
+    {
+        return l * w;
+    }
+};
+
+int main()
+{
+    double r, l, w;
+
+    // Input dimensions
+    cout << "Enter circle radius: ";
+    cin >> r;
+
+    cout << "Enter rectangle length and width: ";
+    cin >> l >> w;
+
+    // Check dimensions
+    if (r < 0 || l < 0 || w < 0)
+    {
+        cout << "Dimensions cannot be negative.";
+        return 0;
+    }
+
+    // Create objects
+    Circle c(r);
+    Rectangle rec(l, w);
+
+    // Display calculated areas
+    cout << "Area of circle: " << c.area() << endl;
+    cout << "Area of rectangle: " << rec.area() << endl;
+
+    return 0;
+}
