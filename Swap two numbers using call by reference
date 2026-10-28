@@ -1,0 +1,32 @@
+// Program 9: Swap two numbers using call by reference
+#include <iostream>
+using namespace std;
+
+// Function to swap two numbers
+void swap(int &a, int &b)
+{
+    int c;
+
+    c = a;
+    a = b;
+    b = c;
+}
+
+int main()
+{
+    int a, b;
+
+    // Input two numbers
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
+
+    // Call the swap function
+    swap(a, b);
+
+    // Display swapped numbers
+    cout << "After swapping:\n";
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+
+    return 0;
+}
