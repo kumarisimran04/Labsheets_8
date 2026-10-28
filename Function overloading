@@ -1,0 +1,35 @@
+// Program 14: Demonstrate function overloading
+#include <iostream>
+using namespace std;
+
+class Calculator
+{
+public:
+    // Add two integers
+    int add(int a, int b)
+    {
+        return a + b;
+    }
+
+    // Add two decimal numbers
+    double add(double a, double b)
+    {
+        return a + b;
+    }
+};
+
+int main()
+{
+    // Create Calculator object
+    Calculator c;
+
+    // Call the integer version
+    cout << "Sum of integers: ";
+    cout << c.add(10, 20) << endl;
+
+    // Call the double version
+    cout << "Sum of decimal numbers: ";
+    cout << c.add(2.5, 3.5) << endl;
+
+    return 0;
+}
