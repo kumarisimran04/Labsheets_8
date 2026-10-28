@@ -1,0 +1,103 @@
+// Program 12: Demonstrate encapsulation using a Bank Account
+#include <iostream>
+using namespace std;
+
+class BankAccount
+{
+private:
+    // Balance cannot be accessed directly outside the class
+    float balance;
+
+public:
+    // Constructor to set initial balance
+    BankAccount()
+    {
+        balance = 0;
+    }
+
+    // Function to deposit money
+    void deposit(float a)
+    {
+        if (a > 0)
+        {
+            balance = balance + a;
+            cout << "Amount deposited successfully.\n";
+        }
+        else
+        {
+            cout << "Enter a valid amount.\n";
+        }
+    }
+
+    // Function to withdraw money
+    void withdraw(float a)
+    {
+        if (a <= 0)
+        {
+            cout << "Enter a valid amount.\n";
+        }
+        else if (a > balance)
+        {
+            cout << "Insufficient balance.\n";
+        }
+        else
+        {
+            balance = balance - a;
+            cout << "Amount withdrawn successfully.\n";
+        }
+    }
+
+    // Function to display balance
+    void display()
+    {
+        cout << "Current balance: " << balance << endl;
+    }
+};
+
+int main()
+{
+    // Create a BankAccount object
+    BankAccount b;
+    float a;
+    int ch;
+
+    // Display menu until user exits
+    do
+    {
+        cout << "\n1. Deposit";
+        cout << "\n2. Withdraw";
+        cout << "\n3. Display Balance";
+        cout << "\n0. Exit";
+        cout << "\nEnter choice: ";
+        cin >> ch;
+
+        switch (ch)
+        {
+            case 1:
+                cout << "Enter amount to deposit: ";
+                cin >> a;
+                b.deposit(a);
+                break;
+
+            case 2:
+                cout << "Enter amount to withdraw: ";
+                cin >> a;
+                b.withdraw(a);
+                break;
+
+            case 3:
+                b.display();
+                break;
+
+            case 0:
+                cout << "Thank you.\n";
+                break;
+
+            default:
+                cout << "Invalid choice.\n";
+        }
+    }
+    while (ch != 0);
+
+    return 0;
+}
